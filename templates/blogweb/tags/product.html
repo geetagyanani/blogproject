@@ -1,0 +1,16 @@
+ {% for obj in data %}
+  <div class="row products">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 productscol">  
+                        <a href="#" class="box3">
+                            <figure> {% if obj.image != '' %}<img src="{{ obj.image }}">
+                            {% endif %}
+                        </figure>
+                            <div class="box4 maxheight3">
+                                <h3>{{ obj.title }}</h3>
+                                <p>{{ obj.description }}</p>
+                            </div>
+                            <span></span>
+                            <em></em>
+                        </a>  
+                     </div>
+                     {% endfor %}

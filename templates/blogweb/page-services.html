@@ -1,0 +1,37 @@
+{% extends 'blogweb/layout.html' %}
+{% load query_params %}
+{%load static%}
+{% load query_data %}
+{% block body%}
+<div class="extrabg">
+    <!--==============================header=================================-->
+    {% include 'blogweb/inc/header.html' %}
+    <!--==============================content=================================-->
+    <div id="content">
+        <!--==============================row_4=================================-->
+        <div class="row_4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+					
+                        {% with 'widget_services'|get_widget as obj %}
+                        <h2 class="padbot2">{{obj.heading}}</h2>
+                        {{obj.services|safe}}
+						{% endwith %}
+                        
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                       
+						<h2>{{ data.page_subheading }}</h2>
+                        <ul class="list4">
+                          {% tags_service %}  
+                        </ul>
+                    </div>
+                </div>
+            </div>             
+        </div>
+    </div>
+    <!--==============================footer=================================-->
+    {% include 'blogweb/inc/footer.html' %}
+</div>
+{% endblock %}

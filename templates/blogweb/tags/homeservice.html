@@ -1,0 +1,17 @@
+ 
+
+                     {% for obj in data %}
+   <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3 collist1 color1">
+                            <div class="box1 maxheight">
+                                <figure>{% if obj.image != '' %}<img src="{{ obj.image }}">
+                                {% endif %}</figure>
+                                <div class="box1_1">
+                                    <h2>{{ obj.title }}</h2>
+                                    <p>{{ obj.description }}</p>
+                                    <a href="#" class="btn btn-primary btn-lg btn2">{{ obj.readmore_link }}</a> 
+                                </div>    
+                                <span></span>                      
+                            </div> 
+                            <em></em> 
+                        </li>
+                     {% endfor %}

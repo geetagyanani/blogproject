@@ -1,0 +1,20 @@
+{%load query_params %}
+<div class ="form-group">
+<label>Heading </label>
+<input type="text" name="heading" class="form-control" value="{{data.heading}}" />
+</div>
+
+<div class ="form-group">
+<label>Image</label>
+{% media_image 'page_banner' data %}
+</div>
+
+<div class ="form-group">
+<label> Heading 1 </label>
+<input type="text" name="heading1" class="form-control" value="{{data.heading1}}" />
+</div>
+
+<div class ="form-group">
+<label>Image</label>
+{% media_image 'page_banner1' data %}
+</div>

@@ -1,0 +1,27 @@
+{% load query_params %}
+ <footer>
+        <div class="container">
+            <div class="footerrow">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="pull-right">
+                            {% with 'socialsettings'|get_widget as social %}
+                            <ul class="social_icons clearfix">
+                                 <li><a href={{social.facebook_url}}>facebook</a></li>
+                                 <li><a href={{social.twitter_url}}>twitter</a></li>
+                                 <li class="last"><a href={{social.google_url}}>google+</a></li>
+                            </ul>
+                            {% endwith %}
+                        </div>
+
+{% with 'generalsetting'|get_widget as obj %}
+<p class="footerpriv">
+    {{ obj.copyright_text|safe }}
+</p>
+{% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

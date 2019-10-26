@@ -1,0 +1,76 @@
+{% extends 'adminpanel/inc/layout.html'%}
+{% load static%}
+{% load query_params%}
+{% load admin_params %}
+{% block title%} Edit Partner {% endblock %}
+{% block bodyclass%}hold-transition skin-light-blue sidebar-mini{% endblock %}
+{% block body%}
+     
+	<div class="content-wrapper">
+		<section class="content-header">
+		  <h1>
+			Edit
+			<small>Partner</small>
+		  </h1>
+		  <ol class="breadcrumb">
+			<li><a href="{% url 'adminpanel_dashboard' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a href="">Partners</a></li>
+			<li class="active">Edit Partner</li>
+		  </ol>
+		</section>
+		<section class="content">
+			<form action="{% url 'update_partner' %}" method="POST">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-md-8 col-lg-8">
+						<div class="add_new_bg">
+							<div class="form-group">
+								<label>Title</label>
+								<input type="text" class="form-control" name="title" value="{{ data.title }}">
+							</div>
+							
+							
+							
+	
+							
+							</div>
+						<br/>
+						
+							
+						</div>
+						<div class="col-md-4 col-lg-4">
+							
+							<div class="box box-info border">
+								<div class="box-header">
+									<h3 class="box-title transform">Partner Visibility</h3>
+							   </div>
+								<div class="sidebar-section">
+										
+										 
+										 <div class="form-group">
+												<label>Status</label>
+												<select class="form-control select2 c_required" name="status">
+												<option value="select">--Select--</option>
+												<option value="publish" {% if data.status == "publish" %} selected {% endif %}>Publish</option>
+												<option value="unpublish" {% if data.status == "unpublish" %} selected {% endif %}>Unpublish</option>
+												</select>
+											</div>	
+											{% media_image 'page_banner' data %}
+											<input type="hidden" name="id" value="{{data.id}}"/>
+											
+											 <div class="text-right"><div class="submit_btn"><button class="btn btn-info" type="submit"> Update Partner </button></div></div>
+										
+								</div>
+							</div>
+						
+						</div>
+			
+				</div>
+			</form>
+		
+		
+		</section>
+	
+	</div>
+
+{% endblock %}

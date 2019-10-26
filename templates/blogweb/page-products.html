@@ -1,0 +1,26 @@
+{% extends 'blogweb/layout.html' %}
+{% load query_data %}
+{% load static %}
+
+{% block body %}
+
+<div class="extrabg">
+    <!--==============================header=================================-->
+    {% include 'blogweb/inc/header.html' %}
+    <!--==============================content=================================-->
+    <div id="content">
+        <!--==============================row_5=================================-->
+        <div class="row_5">
+            <div class="container">
+                <h2>Products Overview</h2>
+                <div class="row products">
+                     {% products_list %}
+                </div>
+            </div>             
+        </div>
+    </div>
+    <!--==============================footer=================================-->
+    {% include 'blogweb/inc/footer.html' %}
+    
+</div>
+{% endblock %}

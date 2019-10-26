@@ -1,0 +1,19 @@
+{% load admin_params %}
+{% load query_params %}
+<div class="col-md-10">
+{% load_page_list data.home_page %}
+</div>
+
+<div class="col-md-10">
+	<div class="form-group">
+        <label>Copyright Text</label>
+		<textarea type="text" class="form-control" name="copyright_text"   placeholder="Copyright Text"/>{{data.copyright_text}}</textarea>
+</div>
+</div>
+<div class="col-md-10">
+	<div class="form-group">
+        <label>Logo</label>
+		{% media_image 'logo' data %}
+</div>
+</div>
+	

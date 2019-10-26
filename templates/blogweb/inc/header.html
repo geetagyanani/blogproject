@@ -1,0 +1,20 @@
+{% load static %}
+{% load menus %}
+{% load query_params %}
+<header id="header">
+        <div class="container">
+          {% with 'generalsetting'|get_widget as obj %}
+          <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img alt="Body Icon" src="{{obj.logo}}"></a></h1>
+          {% endwith %}
+        </div>
+        <hr class="line1">
+        <div class="container">
+          <div class="menuheader">
+            <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+            	{% menu request menu_slug="header-menu" menu_class="nav sf-menu" %}
+                
+                  
+            </nav>
+          </div>
+        </div>
+    </header>

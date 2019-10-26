@@ -1,0 +1,75 @@
+{% extends 'adminpanel/inc/layout.html'%}
+{% load static%}
+{% load query_params%}
+{% load admin_params %}
+{% block title%} Add Service {% endblock %}
+{% block bodyclass%}hold-transition skin-light-blue sidebar-mini{% endblock %}
+{% block body%}
+     
+	<div class="content-wrapper">
+		<section class="content-header">
+		  <h1>
+			Add New 
+			<small>Service</small>
+		  </h1>
+		  <ol class="breadcrumb">
+			<li><a href="{% url 'adminpanel_dashboard' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a href="">Services</a></li>
+			<li class="active">Add New Service</li>
+		  </ol>
+		</section>
+		<section class="content">
+			<form action="{% url 'submit_service'%}" method="POST">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-md-8 col-lg-8">
+						<div class="add_new_bg">
+							<div class="form-group">
+								<label>Title</label>
+								<input type="text" class="form-control" name="title">
+							</div>
+							
+							
+							
+	
+							
+							</div>
+						<br/>
+						
+							
+						</div>
+						<div class="col-md-4 col-lg-4">
+							
+							<div class="box box-info border">
+								<div class="box-header">
+									<h3 class="box-title transform">Service Visibility</h3>
+							   </div>
+								<div class="sidebar-section">
+										
+										 
+										 <div class="form-group">
+												<label>Status</label>
+												<select class="form-control select2 c_required" name="status">
+												<option value="select">--Select--</option>
+												<option value="publish">Publish</option>
+												<option value="unpublish">Unpublish</option>
+												</select>
+											</div>	
+											{% media_image %}
+											
+											 <div class="text-right"><div class="submit_btn"><button class="btn btn-info" type="submit"> Save Service </button></div></div>
+										
+								</div>
+							</div>
+						
+						</div>
+			
+				</div>
+			</form>
+		
+		
+		</section>
+	
+	</div>
+
+{% endblock %}
